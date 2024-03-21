@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Register Website Suite" thread-count="2" parallel="tests">
+    <parameter name="browser" value="firefox" />
+    <parameter name="url" value="https://demo.automationtesting.in/Register.html" />
+    <test name="Input Field Test">
+        <classes>
+            <class name="org.example.BaseLib" />
+            <class name="InputFieldTests" />
+        </classes>
+    </test>
+    <test name="Whole Form Entry Test">
+        <parameter name="browser" value="chrome" />
+        <parameter name="url" value="https://demo.automationtesting.in/Register.html" />
+        <classes>
+            <class name="org.example.BaseLib" />
+            <class name="WholeEntryTest" />
+        </classes>
+    </test>
+</suite>
