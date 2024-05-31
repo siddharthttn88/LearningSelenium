@@ -2,9 +2,15 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -41,7 +47,11 @@ public class Main {
         driver.findElement(By.xpath("//input[@id='secondpassword']")).sendKeys("Siddharth");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
+//        WebDriverWait wa = new WebDriverWait(driver, Duration.ofSeconds(10));
+       /* Wait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(5))
+                .ignoring(NoSuchElementException.class); */
         Thread.sleep(10000);
         driver.quit();
 
